@@ -22,3 +22,14 @@ typedef struct room{
     char* description;
     char** objects;
 } room_t;
+
+/**
+    An object that populates a given area. Has a name and description that is read once obsereved in game.
+    Additionally, has an integer value for a status. If status is equal to 0, the object cannot be picked up.
+    Otherwise, it is treated as an item and can be added to the inventory.
+**/
+typedef struct object{
+    char* name;
+    char* description;
+    int status;
+} object_t;
