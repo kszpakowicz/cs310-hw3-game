@@ -22,3 +22,9 @@ typedef struct room{
     char* description;
     char** objects;
 } room_t;
+
+typedef struct object{
+    char* name;
+    char* description;
+    int status;
+} object_t;
