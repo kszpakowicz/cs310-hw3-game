@@ -30,4 +30,9 @@ create_Room(char* n, char* d, char** o){
     &n.objects = o;   
 }
 
-
+create_Object(char* n, char* d, int s){
+    struct object &n;
+    &n.name = n;
+    &n.description = d;
+    &n.status = s
+}
