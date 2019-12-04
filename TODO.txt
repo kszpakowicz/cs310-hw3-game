@@ -1,0 +1,11 @@
+TODO:
+
+GAME LOGIC / COMMANDS:
+- enter Room method
+    selects room and reads name and description
+
+- Player Commands
+    Player can look, grab, leave, act
+
+- Script parser
+    detects different parts of file for user input
