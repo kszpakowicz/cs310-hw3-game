@@ -30,6 +30,10 @@ create_Room(char* n, char* d, char** o){
     &n.objects = o;   
 }
 
+/**
+    Creates an object to be populated in an area. Each object has a name and description that is read once the object
+    is selected. Additionally, each object has a status that determines whether it can be picked up or not.
+**/
 create_Object(char* n, char* d, int s){
     struct object &n;
     &n.name = n;
