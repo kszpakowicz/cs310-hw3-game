@@ -1,0 +1,16 @@
+INTRO
+      C PROGRAMMING THE ADVENTURE         |
+Welcome to the game! Let's get started.   |
+PLAYER
+Hans Gruber|
+100|
+|
+ROOM
+Living Room|
+This is an upscale Family Area|
+|
+OBJECT
+Couch|
+Living Room|
+A modern piece of upholstered art.|
+0|
