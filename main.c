@@ -1,8 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "creator.c"
+#include "objects.h"
 
+// Game commands
+enum commands{
+    LOOK,
+    ACTION,
+    MOVE
+} 
+
+char** intro = NULL
+
+/**
+    Plays a created intro from a text file. Should contain a title, narrative description, etc.
+**/
+void play_Intro(){
+    
+}
+
+/**
+    Enters a given area. Upon entering, the 
+**/
 void enter_Room(char* room){
    /**
         TODO - Access created room struct based on name selected
@@ -12,39 +31,54 @@ void enter_Room(char* room){
 }
 
 void player_Commands(char* room){
-    /**
-        TODO - List of accessable commands for the player in an area.
-            - Implementation is still being worked on. We might merge this with enter_Room.
+    
+	switch (commands){
+		case '1': printf(room.);
+		case '2': printf("You cannot take the table.");
+		case '3': printf("You cannot leave.");
+		case '4': printf("Your inventory is empty.");
+	}
 
-            Commands to add:
-
-            1. Look (Displays all items/actions available in the room - extended description of room)
-            2. Action (Player can try and take/interact objects if available) 
-            3. Move (Player can leave and enter areas)
-    **/
+    player_Commands(room);
 }
 
-void start_Game(char* filename){
-    /**
-        Stream opens script file that contains necessary data for game:
-        - Names and descriptions for areas 
-        - Player health/starting values
-        - Commands
-        - Scenerios 
-    **/
+/**
+    Starts the game by playing the intro and entering the first room.
+     The first created room should be named 'intro'.
+**/
+void start_Game(){
+    play_Intro();
+    enter_Room(intro);
+}
+
+/**
+    Creates all characters, items, and areas for the game from the user script.
+**/
+void initialize_Game(char *filename){
     FILE *stream;
-    stream = fopen(filename, "r");    
+    char *line = NULL;
+    size_t len = 0;
+    ssize_t chars_read;
+
+    char *room
+
+    stream = fopen(filename, "r");
+    if (stream == NULL) {
+        perror("fopen");
+        exit(EXIT_FAILURE);
+    }
+
+    while ((chars_read = getline(&line, &len, stream)) != -1) {
+        
+    }
+
+    free(line);
+    fclose(stream);
 }
 
-void ini_Game(){
-    /**
-        TODO - Creates all characters, items, and areas for the game from the user script.
-                - Called either during main or start_Game function. 
-                    - Might be deleted and functionality merged with start_Game.
-    **/
-}
-
+/** Main function; runs game**/
 int main(int argc, char *argv[]){
-    start_Game(argv[arg]);
+    initialize_Game(argv[arg]);
+    start_Game();
     return 0;
 }
