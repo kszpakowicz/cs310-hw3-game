@@ -9,6 +9,7 @@
     A main playable character. Has health and an inventory for holding items.
 **/
 typedef struct player{
+    char* name;
     int health;
     char** inventory;
 } player_t;
@@ -21,6 +22,9 @@ typedef struct room{
     char* name;
     char* description;
     char** objects;
+    char** look;
+    char** action;
+    char** leave;
 } room_t;
 
 /**
@@ -30,6 +34,7 @@ typedef struct room{
 **/
 typedef struct object{
     char* name;
+    char* area;
     char* description;
     int status;
 } object_t;
@@ -65,9 +70,10 @@ create_Room(char* n, char* d, char** o){
     Creates an object to be populated in an area. Each object has a name and description that is read once the object
     is selected. Additionally, each object has a status that determines whether it can be picked up or not.
 **/
-create_Object(char* n, char* d, int s){
+create_Object(char* n, char* r, char* d, int s){
     struct object &n;
     &n.name = n;
+    &r.room = r;
     &n.description = d;
     &n.status = s
 }
